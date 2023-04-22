@@ -1,0 +1,12 @@
+.main-content.hidden {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 3s ease, visibility 3s;
+  }
+  
+  .main-content.visible {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 3s ease, visibility 3s;
+  }
+  
