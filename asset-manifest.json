@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/tyjkot/static/css/main.0d2ef88e.css",
-    "main.js": "/tyjkot/static/js/main.afa9f13b.js",
+    "main.css": "/tyjkot/static/css/main.1eeea671.css",
+    "main.js": "/tyjkot/static/js/main.29f7e9b1.js",
     "static/js/787.bd0dbc4a.chunk.js": "/tyjkot/static/js/787.bd0dbc4a.chunk.js",
     "static/media/fontawesome-webfont.svg?v=4.7.0": "/tyjkot/static/media/fontawesome-webfont.c1e38fd9e0e74ba58f7a.svg",
     "static/media/fontawesome-webfont.eot": "/tyjkot/static/media/fontawesome-webfont.8b43027f47b20503057d.eot",
@@ -10,12 +10,12 @@
     "static/media/fontawesome-webfont.woff2?v=4.7.0": "/tyjkot/static/media/fontawesome-webfont.20fd1704ea223900efa9.woff2",
     "static/media/profilePic.jpg": "/tyjkot/static/media/profilePic.80e0c044abbc22d1cbf5.jpg",
     "index.html": "/tyjkot/index.html",
-    "main.0d2ef88e.css.map": "/tyjkot/static/css/main.0d2ef88e.css.map",
-    "main.afa9f13b.js.map": "/tyjkot/static/js/main.afa9f13b.js.map",
+    "main.1eeea671.css.map": "/tyjkot/static/css/main.1eeea671.css.map",
+    "main.29f7e9b1.js.map": "/tyjkot/static/js/main.29f7e9b1.js.map",
     "787.bd0dbc4a.chunk.js.map": "/tyjkot/static/js/787.bd0dbc4a.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.0d2ef88e.css",
-    "static/js/main.afa9f13b.js"
+    "static/css/main.1eeea671.css",
+    "static/js/main.29f7e9b1.js"
   ]
 }
