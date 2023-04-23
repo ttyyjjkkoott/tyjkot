@@ -3,8 +3,16 @@ import Spinner from './Spinner';
 import './App.css';
 import './MainContent.css';
 import profilePicture from './assets/profilePic.jpg';
+import { Provider } from 'react-redux';
+import store from './redux/store.js';
+import MessageBoard from './redux/MessageBoard';
+import { initializeApp } from 'firebase/app';
+import { getAnalytics } from 'firebase/analytics';
+import firebaseConfig from './redux/firebase/firebaseConfig';
 
+// i'm well aware this website is messy. it's still cool tho
 function App() {
+  // loading spinner
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -15,40 +23,47 @@ function App() {
     return () => clearTimeout(timer);
   }, []);
 
+  // firebase for message board
+  const app = initializeApp(firebaseConfig);
+  getAnalytics(app);
+
   return (
-    <div className={`App ${loading ? 'loading' : ''}`}>
-      {loading && <Spinner />}
-      <div className={`main-content ${loading ? 'hidden' : 'visible'}`}>
-        <div className="profile-picture-container">
-          <img
-            src={profilePicture}
-            alt="tyjkot profile picture"
-            className="profile-picture"
-          />
-        </div>
-        <div className="buttons">
-          <a
-            href="https://twitter.com/tyjkot"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="button twitter"
-          >
-            <i className="fa fa-twitter"></i>
-          </a>
-          <a
-            href="https://github.com/ttyyjjkkoott"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="button github"
-          >
-            <i className="fa fa-github"></i>
-          </a>
-          <a href="mailto:t@tyjkot.io" className="button email">
-            <i className="fa fa-envelope"></i>
-          </a>
+    <Provider store={store}>
+      <div className={`App ${loading ? 'loading' : ''}`}>
+        {loading && <Spinner />}
+        <div className={`main-content ${loading ? 'hidden' : 'visible'}`}>
+          <div className="profile-picture-container">
+            <img
+              src={profilePicture}
+              alt="tyjkot"
+              className="profile-picture"
+            />
+          </div>
+          <div className="buttons">
+            <a
+              href="https://twitter.com/tyjkot"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="button twitter"
+            >
+              <i className="fa fa-twitter"></i>
+            </a>
+            <a
+              href="https://github.com/ttyyjjkkoott"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="button github"
+            >
+              <i className="fa fa-github"></i>
+            </a>
+            <a href="mailto:t@tyjkot.io" className="button email">
+              <i className="fa fa-envelope"></i>
+            </a>
+          </div>
+          <MessageBoard />
         </div>
       </div>
-    </div>
+    </Provider>
   );
 }
 
