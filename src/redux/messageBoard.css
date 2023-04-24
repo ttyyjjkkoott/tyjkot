@@ -62,8 +62,8 @@ textarea {
 }
 
 button[type='submit'] {
-  background-color: #007bff;
-  color: #fff;
+  background-color: #ffffff;
+  color: #000000;
   padding: 0.5rem 1rem;
   border: none;
   border-radius: 0.25rem;
@@ -73,7 +73,7 @@ button[type='submit'] {
 }
 
 button[type='submit']:hover {
-  background-color: #0056b3;
+  background-color: #c09c0f;
 }
 
 .message-expiration {
