@@ -4,6 +4,7 @@ import { setMessages, addMessage } from './messagesActions';
 import { db } from './firebase/firebase';
 import { collection, query, orderBy, onSnapshot, addDoc } from 'firebase/firestore';
 import './messageBoard.css';
+import { Virtuoso } from 'react-virtuoso';
 
 const MessageBoard = () => {
   const messages = useSelector((state) => state.messages);
@@ -48,7 +49,7 @@ const MessageBoard = () => {
     } catch (error) {
       console.error('Error posting message:', error);
     }
-  };  
+  };
 
   return (
     <div className="message-board">
@@ -68,18 +69,23 @@ const MessageBoard = () => {
         ></textarea>
         <button type="submit">Submit</button>
       </form>
-      <div className="messages-container">
-        {messages.map((msg) => (
-          <div key={msg.id} className="message-bubble">
-            <div className="message-info">
-              <span className="message-name">{msg.name}</span>
-              <span className="message-time">
-                {new Date(msg.timestamp).toLocaleString()}
-              </span>
+      <div className="message-board">
+        <Virtuoso
+          className="messages-container"
+          data={messages}
+          itemContent={(index, msg) => (
+            <div key={msg.id} className="message-bubble">
+                <div className="message-info">
+                  <span className="message-name">{msg.name}</span>
+                  <span className="message-time">
+                    {new Date(msg.timestamp).toLocaleString()}
+                  </span>
+                </div>
+                <div className="message-text">{msg.message}</div>
             </div>
-            <div className="message-text">{msg.message}</div>
-          </div>
-        ))}
+          )}
+          style={{ height: '900px', width: '100%' }}
+        /> 
       </div>
     </div>
   );
