@@ -4,13 +4,14 @@ import { setMessages, addMessage } from './messagesActions';
 import { db } from './firebase/firebase';
 import { collection, query, orderBy, onSnapshot, addDoc } from 'firebase/firestore';
 import './messageBoard.css';
-import { Virtuoso } from 'react-virtuoso';
+import MessagePopup from './MessagePopup';
 
 const MessageBoard = () => {
   const messages = useSelector((state) => state.messages);
   const dispatch = useDispatch();
   const [name, setName] = useState('');
   const [message, setMessage] = useState('');
+  const [showPopup, setShowPopup] = useState(false);
 
   useEffect(() => {
     const fetchMessages = () => {
@@ -25,6 +26,10 @@ const MessageBoard = () => {
 
     fetchMessages();
   }, [dispatch]);
+
+  const togglePopup = () => {
+    setShowPopup(!showPopup);
+  };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -46,46 +51,40 @@ const MessageBoard = () => {
       dispatch(addMessage(messageData));
       setName('');
       setMessage('');
+      togglePopup();
     } catch (error) {
       console.error('Error posting message:', error);
     }
-  };
+  };  
 
   return (
     <div className="message-board">
       <p className="message-expiration">leave a public message that expires in 24 hours</p>
-      <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          placeholder="Your name"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
+      <button className="leave-message-button" onClick={togglePopup}>Leave a message</button>
+      {showPopup && (
+        <MessagePopup
+          name={name}
+          message={message}
+          setName={setName}
+          setMessage={setMessage}
+          handleSubmit={handleSubmit}
+          closePopup={togglePopup}
         />
-        <textarea
-          placeholder="Your message"
-          maxLength="140"
-          value={message}
-          onChange={(e) => setMessage(e.target.value)}
-        ></textarea>
-        <button type="submit">Submit</button>
-      </form>
+      )}
       <div className="message-board">
-        <Virtuoso
-          className="messages-container"
-          data={messages}
-          itemContent={(index, msg) => (
+        <div className="messages-container">
+          {messages.map((msg) => (
             <div key={msg.id} className="message-bubble">
-                <div className="message-info">
-                  <span className="message-name">{msg.name}</span>
-                  <span className="message-time">
-                    {new Date(msg.timestamp).toLocaleString()}
+              <div className="message-info">
+                <span className="message-name">{msg.name}</span>
+                <span className="message-time">
+                  {new Date(msg.timestamp).toLocaleString()}
                   </span>
                 </div>
-                <div className="message-text">{msg.message}</div>
+              <div className="message-text">{msg.message}</div>
             </div>
-          )}
-          style={{ height: '900px', width: '100%' }}
-        /> 
+          ))}
+        </div>
       </div>
     </div>
   );
