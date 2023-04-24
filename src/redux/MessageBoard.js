@@ -53,7 +53,7 @@ const MessageBoard = () => {
 
   return (
     <div className="message-board">
-      <p className="message-expiration">leave a message that expires in 24 hours</p>
+      <p className="message-expiration">leave a public message that expires in 24 hours</p>
       <form onSubmit={handleSubmit}>
         <input
           type="text"
