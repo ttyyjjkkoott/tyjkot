@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Spinner from './Spinner';
 import './App.css';
 import './MainContent.css';
-import profilePicture from './assets/profilePic.jpg';
+import profilePicture from './assets/profile-Pic-tyjkot.jpg';
 import { Provider } from 'react-redux';
 import store from './redux/store.js';
 import MessageBoard from './redux/MessageBoard';
