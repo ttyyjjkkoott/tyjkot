@@ -123,3 +123,11 @@
 .email {
   background-color: #c09c0f;
 }
+
+.button.etsy {
+  background-color: #d5641c;
+}
+
+.button.etsy:hover {
+  background-color: #bf551a;
+}

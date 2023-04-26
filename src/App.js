@@ -59,6 +59,14 @@ function App() {
             <a href="mailto:t@tyjkot.io" className="button email">
               <i className="fa fa-envelope"></i>
             </a>
+            <a
+              href="https://www.etsy.com/shop/QualityCrystalShopCo"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="button etsy"
+            >
+              <i className="fab fa-etsy"></i>
+            </a>
           </div>
           <MessageBoard />
         </div>
