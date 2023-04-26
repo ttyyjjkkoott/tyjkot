@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/tyjkot/static/css/main.50fb0210.css",
-    "main.js": "/tyjkot/static/js/main.51bbf7a1.js",
+    "main.css": "/tyjkot/static/css/main.f5fc7613.css",
+    "main.js": "/tyjkot/static/js/main.36a1ecd6.js",
     "static/js/787.bd0dbc4a.chunk.js": "/tyjkot/static/js/787.bd0dbc4a.chunk.js",
+    "static/media/profile-Pic-tyjkot.jpg": "/tyjkot/static/media/profile-Pic-tyjkot.b226f96fda323fbe565d.jpg",
     "static/media/fontawesome-webfont.svg?v=4.7.0": "/tyjkot/static/media/fontawesome-webfont.c1e38fd9e0e74ba58f7a.svg",
     "static/media/fontawesome-webfont.eot": "/tyjkot/static/media/fontawesome-webfont.8b43027f47b20503057d.eot",
     "static/media/fontawesome-webfont.ttf?v=4.7.0": "/tyjkot/static/media/fontawesome-webfont.1e59d2330b4c6deb84b3.ttf",
     "static/media/fontawesome-webfont.woff?v=4.7.0": "/tyjkot/static/media/fontawesome-webfont.f691f37e57f04c152e23.woff",
     "static/media/fontawesome-webfont.woff2?v=4.7.0": "/tyjkot/static/media/fontawesome-webfont.20fd1704ea223900efa9.woff2",
-    "static/media/profilePic.jpg": "/tyjkot/static/media/profilePic.80e0c044abbc22d1cbf5.jpg",
     "index.html": "/tyjkot/index.html",
-    "main.50fb0210.css.map": "/tyjkot/static/css/main.50fb0210.css.map",
-    "main.51bbf7a1.js.map": "/tyjkot/static/js/main.51bbf7a1.js.map",
+    "main.f5fc7613.css.map": "/tyjkot/static/css/main.f5fc7613.css.map",
+    "main.36a1ecd6.js.map": "/tyjkot/static/js/main.36a1ecd6.js.map",
     "787.bd0dbc4a.chunk.js.map": "/tyjkot/static/js/787.bd0dbc4a.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.50fb0210.css",
-    "static/js/main.51bbf7a1.js"
+    "static/css/main.f5fc7613.css",
+    "static/js/main.36a1ecd6.js"
   ]
 }
