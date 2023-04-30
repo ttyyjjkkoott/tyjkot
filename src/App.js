@@ -10,7 +10,6 @@ import { initializeApp } from 'firebase/app';
 import { getAnalytics } from 'firebase/analytics';
 import firebaseConfig from './redux/firebase/firebaseConfig';
 
-// i'm well aware this website is messy. it's still cool tho
 function App() {
   // loading spinner
   const [loading, setLoading] = useState(true);
